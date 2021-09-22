@@ -2,6 +2,20 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 400;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+    font-display: auto; 
+}
+
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 500;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+    font-display: auto; 
+}
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -25,12 +39,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: "Inter Web" , Helvetica, arial, sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
@@ -47,13 +61,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -158,18 +172,23 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #3385FF;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #2E77E6;
+}
+
+label, 
+input{
+    display: block;
 }
 
 /*------------------------------------*\
@@ -316,6 +335,10 @@ a:focus {
     flex-direction: row-reverse;
 }
 
+.o-layout--colum {
+    flex-direction: column;
+}
+
 /* Horizontal alignment modifiers*/
 
 .o-layout--justify-start {
@@ -432,11 +455,44 @@ a:focus {
     Website main logo
 */
 
+.c-logo{
+    height: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.c-logo__symbol{
+    height: 100%;
+    
+}
+
+.c-logo__path {
+    
+}
+
+.c-logo__path--1 {
+    fill: #20223A
+}
+
+.c-logo__path--2 {
+    fill: #3385FF
+}
+
+.c-logo__path--3 {
+    fill: #1B4186
+}
+
+
 /*
     Component: Card
     ---
     Card with box shadow
 */
+
+.c-card{
+    background-color: white;
+    border-radius: 3px;
+}
 
 /*
     Component: Forms
@@ -451,10 +507,39 @@ a:focus {
 */
 
 .c-input {
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; */
+    
+    all:unset;
+    /* moet bovenaan staan */
+    display: block;
+    width: 100%;
+    border-width:  1px;
+    border-style: solid;
+    border-color: #E2E3E7;
+    background-color: white;
+    font-family: inherit;
+    color: inherit;
+    border-radius: 3px;
+
+    font-size: 16px;
+    line-height: 24px;
+    padding: 11px;
+
+    outline: none;
 
 }
 
+.c-input:hover{
+    border-color: #CACCD4;
+}
+
+
 .c-input:focus {
+    border-color: #3385FF;
+    box-shadow: h-offset v-offset blur spread color;
+    box-shadow: 0 0 0 3px #3385ff4d;
 }
 
 /*
@@ -473,6 +558,12 @@ a:focus {
 
 }
 
+.c-form-field--option{
+    display: flex;
+
+    align-items: center;
+}
+
 /*
     Component: Button
     ---
@@ -480,24 +571,38 @@ a:focus {
 */
 
 .c-button {
-
+    background-color: #3385FF;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #2E77E6;
+    border-radius: 3px;
+    line-height: 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    /* padding-left: 127px; */
+    /* padding-right: 127px; */
+    width: 100%;
+    outline: none;
 }
 
 .c-button:hover {
-
+    background-color: #4F95FF;
 }
 
 .c-button:focus {
-
+    box-shadow: 0 0 0 3px #3385ff4d;
 }
 
 .c-button:active {
-
+    background-color: #2E77E6;
 }
 
 .c-button--block {
 
 }
+
+
 
 /*------------------------------------*\
 #UTILITIES
