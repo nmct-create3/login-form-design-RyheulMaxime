@@ -135,13 +135,13 @@ h1 {
 
 h2 {
     font-size: 32px;
-    line-height: 40px;
+    line-height: calc(var(--global-baseline) * 5);
     margin: 0 0 var(--global-whitespace);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
+    line-height: calc(var(--global-baseline) * 4);
     margin: 0 0 var(--global-whitespace);
 }
 
@@ -149,7 +149,7 @@ h4,
 h5,
 h6 {
     font-size: 20px;
-    line-height: 24px;
+    line-height: calc(var(--global-baseline) * 3);
     margin: 0 0 var(--global-whitespace);
 }
 
@@ -160,7 +160,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 var(--global-whitespace)x;
+    margin: 0 0 var(--global-whitespace);
 }
 
 ul,
@@ -176,7 +176,7 @@ li ol {
 blockquote {
     font-style: normal;
     font-size: 23px;
-    line-height: 32px;
+    line-height: calc(var(--global-baseline) * 4);
     margin: 0 0 var(--global-whitespace);
 }
 
@@ -246,26 +246,26 @@ input{
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: var(--global-whitespace-xl);
+    padding-top: calc(var(--global-whitespace) * 2);
     padding-bottom: var(--global-whitespace);
 }
 
 .o-row--xl {
-    padding-top: var(--global-whitespace-xxl);
-    padding-bottom: var(--global-whitespace-xl);
+    padding-top: calc(var(--global-whitespace) * 3);
+    padding-bottom: calc(var(--global-whitespace) * 2);
 }
 
 @media (min-width: 768px) {
     .o-row {
-        padding-left: var(--global-whitespace-xl);
-        padding-right: var(--global-whitespace-xl);
+        padding-left: calc(var(--global-whitespace) * 2);
+        padding-right: calc(var(--global-whitespace) * 2);
     }
 }
 
 @media (min-width: 992px) {
     .o-row--xl {
         padding-top: calc(var(--global-whitespace) * 4);
-        padding-bottom: var(--global-whitespace-xxl);
+        padding-bottom: calc(var(--global-whitespace) * 3);
     }
 }
 
@@ -565,9 +565,11 @@ input{
     
     all:unset;
     /* moet bovenaan staan */
+    --c-input-border-with : 1px ;
+
     display: block;
     width: 100%;
-    border-width:  1px;
+    border-width:  var(--c-input-border-with);
     border-style: solid;
     border-color: var(--global-color-neutral-xxx-light);
     background-color: white;
@@ -576,8 +578,8 @@ input{
     border-radius: 3px;
 
     font-size: var(--global-whitespace-md);
-    line-height: 24px;
-    padding: 11px;
+    line-height: calc(var(--global-baseline) * 3);
+    padding: calc(calc( 48px - ( 2 * var(--c-input-border-with) + var(--global-baseline) * 3 )) / 2);
 
     outline: none;
 
@@ -636,7 +638,7 @@ input{
     font-weight: 600;
     border: 1px solid var(--global-color-alpha-dark);
     border-radius: 3px;
-    line-height: 20px;
+    line-height: calc(var(--global-baseline) * 2.5);
     padding-top: 13px;
     padding-bottom: 13px;
     /* padding-left: 127px; */
